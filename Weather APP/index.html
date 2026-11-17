@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Weather App</h1>
+        </header>
+
+        <section class="search-section">
+            <div class="search-wrapper">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    class="city-input" 
+                    placeholder="Enter city name..." 
+                    aria-label="City name input"
+                    autocomplete="off"
+                >
+                <div id="searchDropdown" class="search-dropdown" hidden>
+                    <div class="dropdown-header" id="dropdownHeader" hidden>
+                        <span class="dropdown-title">Search History</span>
+                    </div>
+                    <ul id="dropdownList" class="dropdown-list"></ul>
+                </div>
+            </div>
+            <button id="searchBtn" type="button" class="search-btn">Search</button>
+        </section>
+
+        <div id="loadingMessage" class="loading-message" hidden>
+            Loading weather data...
+        </div>
+
+        <div id="errorMessage" class="error-message" hidden></div>
+
+        <article id="weatherCard" class="weather-card" hidden>
+            <h2 id="cityName" class="city-name"></h2>
+            <p id="forecastTime" class="forecast-time"></p>
+            <div class="weather-grid">
+                <div class="weather-item">
+                    <span class="label">Temperature</span>
+                    <span id="temperature" class="value"></span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value"></span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Pressure</span>
+                    <span id="pressure" class="value"></span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Wind Speed</span>
+                    <span id="windSpeed" class="value"></span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Cloud Cover</span>
+                    <span id="cloudCover" class="value"></span>
+                </div>
+                <div class="weather-item rain-item">
+                    <span class="label">Rainfall Prediction</span>
+                    <span id="rainfall" class="value rain-clickable" title="Click for precipitation details"></span>
+                    <div id="rainPopup" class="rain-popup" hidden>
+                        <strong>Precipitation details</strong>
+                        <p id="rainPopupText" class="rain-popup-text">Click the rain label to view probability and volume.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
